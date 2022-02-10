@@ -1,0 +1,8 @@
+{
+  "name": "random-users",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/arjdev69/random-users.git",
+  "author": "ArjDev69 <bruno96araujo@gmail.com>",
+  "license": "MIT"
+}
