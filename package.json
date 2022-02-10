@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/arjdev69/random-users.git",
   "author": "ArjDev69 <bruno96araujo@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.0.7"
+  }
 }
