@@ -10,18 +10,15 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react",
-    "rootDir": "src",
+    "rootDirs": ["src", "tests"],
     "baseUrl": "src",
-    "allowJs": true,
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["*"],
+      "@/tests/*": ["../tests/*"]
     },
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "allowJs": true,
+    "resolveJsonModule": true
   },
-  "include": ["src"]
+  "include": ["src", "tests"],
+  "exclude": ["tests/e2e/cypress"]
 }
