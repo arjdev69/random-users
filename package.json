@@ -5,6 +5,13 @@
   "repository": "https://github.com/arjdev69/random-users.git",
   "author": "ArjDev69 <bruno96araujo@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "test": "jest --passWithNoTests --no-cache --runInBand",
+    "test:watch": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage"
+  },
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.17",
