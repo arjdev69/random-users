@@ -1,10 +1,10 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import Styles from './home-styles.scss';
 
 const home: React.FC = () => {
   return (
-    <div>
+    <div className={Styles.home}>
       Home
     </div>
   )
