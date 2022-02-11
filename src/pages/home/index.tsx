@@ -5,7 +5,7 @@ import React from 'react';
 const home: React.FC = () => {
   return (
     <div>
-      Teste Aqui 23
+      Home
     </div>
   )
 }
