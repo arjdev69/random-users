@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import Styles from '../Styles/container-styles.scss'
 
 interface Props {
   usersList: []
@@ -18,7 +18,7 @@ interface Item {
 const BoxUsers: React.FC<Props> = ({ usersList }) => {
 
   return (
-    <div>
+    <div className={Styles.box}>
       {usersList.map((value: Item) => (
         <p>{value.name.first}</p>
       ))}
