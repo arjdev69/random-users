@@ -8,14 +8,12 @@ import '@/config/ReactotronConfig';
 
 import { store, persistor } from '@/store';
 
-import Home from '@/pages/home'
-import { Header } from '@/components';
+import Router from '@/routes/Router'
 
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <Header title={"Random Users"} />
-      <Home />
+      <Router />
       </PersistGate>
   </Provider>,
   document.getElementById('main')
