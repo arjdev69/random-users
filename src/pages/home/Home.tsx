@@ -4,23 +4,25 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getListUsersSuccess } from '@/store/modules/users/actions'
 
+import {BoxUsers} from '@/container'
+
 import Styles from './home-styles.scss';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
-  const users = useSelector((state: any) => state.users);
+  const {users, loading} = useSelector((state: any) => state.users);
 
-  const fetchApi = () => {
+  const fetchUsers = () => {
     dispatch(getListUsersSuccess());
   };
 
   useEffect(() => {
-   fetchApi();
+    fetchUsers();
   }, [])
-  
+
   return (
     <div className={Styles.home}>
-      Home
+      {!loading && <BoxUsers usersList={users.results} />}
     </div>
   )
 }
