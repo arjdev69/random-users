@@ -6,7 +6,7 @@ import { getListUsersSuccess } from '@/store/modules/users/actions'
 
 import Styles from './home-styles.scss';
 
-const home: React.FC = () => {
+const Home: React.FC = () => {
   const dispatch = useDispatch();
   const users = useSelector((state: any) => state.users);
 
@@ -25,4 +25,4 @@ const home: React.FC = () => {
   )
 }
 
-export default home;
+export default Home;
