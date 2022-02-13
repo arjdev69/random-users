@@ -13,12 +13,12 @@ const Header: React.FC<Props> = ({ title }) => {
 
   return (
     <div className={Styles.header}>
+      <img src={logo} width={68} />
       <Link to="/">
         <span>
           {title}
         </span>
       </Link>
-      <img src={logo} width={48} />
     </div>
   )
 }
