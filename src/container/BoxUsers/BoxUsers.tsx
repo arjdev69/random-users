@@ -1,27 +1,22 @@
 import React from 'react';
 
+import { GridContent } from '@/components';
+
 import Styles from '../Styles/container-styles.scss'
 
 interface Props {
   usersList: []
 }
 
-interface Item {
-  gender: string,
-  name: {
-    title: string,
-    first: string,
-    last: string
-  }
-}
-
 const BoxUsers: React.FC<Props> = ({ usersList }) => {
 
   return (
     <div className={Styles.box}>
-      {usersList.map((value: Item) => (
-        <p>{value.name.first}</p>
-      ))}
+      <span>Title</span>
+      <div className={Styles.contentBox}>
+        <GridContent data={usersList} />
+      </div>
+      <span>Rodapé</span>
     </div>
   );
 }

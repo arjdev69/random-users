@@ -1,0 +1,26 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #2196f3;
+  grid-gap: 0px 0px;
+  width: 30vw;
+}
+
+.gridItem {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  
+  height: 20vh;
+  
+  text-align: center;
+}
+
+@media only screen and (max-width: 400px) {
+  .gridContainer {
+    grid-template-columns: auto;
+  }
+
+  .gridItem {
+    height: 35vh;
+  }
+}
