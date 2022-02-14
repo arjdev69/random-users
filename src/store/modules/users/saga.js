@@ -7,7 +7,6 @@ import { setListUsersSuccess } from './actions';
 export function* getListUsers({}) {
   try {
     const response = yield call(api.get, '/?results=10');
-    console.log('Perfil atualizado com sucesso!');
     yield put(setListUsersSuccess(response.data));
   }
   catch (err) {

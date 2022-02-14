@@ -3,7 +3,7 @@ import React from 'react';
 import Styles from './grid-styles.scss';
 
 interface Props {
-  data: []
+  data: any[]
 }
 
 interface Item {

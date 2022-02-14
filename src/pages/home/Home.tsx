@@ -1,20 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from "react-redux";
 
+import _ from 'lodash'
+
 import { getListUsersSuccess } from '@/store/modules/users/actions'
 
-import {BoxUsers} from '@/container'
+import { BoxUsers } from '@/container'
 
 import Styles from './home-styles.scss';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
-  const {users, loading} = useSelector((state: any) => state.users);
+  const { users, loading } = useSelector((state: any) => state.users);
+  const [usersList, setListUsers] = useState([])
 
   const fetchUsers = () => {
     dispatch(getListUsersSuccess());
   };
+
+  useEffect(() => {
+    if (!_.isEmpty(users)) {
+      setListUsers([
+        ...usersList,
+        ...users.results
+      ])
+    }
+  }, [users])
 
   useEffect(() => {
     fetchUsers();
@@ -22,7 +34,13 @@ const Home: React.FC = () => {
 
   return (
     <div className={Styles.home}>
-      {!loading && <BoxUsers usersList={users.results} />}
+      <BoxUsers
+        usersList={usersList}
+        callback={fetchUsers}
+        clear={() => {
+          setListUsers([])
+        }}
+      />
     </div>
   )
 }
