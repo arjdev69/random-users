@@ -1,1 +1,1 @@
-export const logo = 'https://cdn-icons-png.flaticon.com/512/599/599928.png'
+export const logo = 'https://cdn-icons.flaticon.com/png/512/1307/premium/1307714.png?token=exp=1644888199~hmac=75c3ab2b736d49017e748ffd292c87ab'
