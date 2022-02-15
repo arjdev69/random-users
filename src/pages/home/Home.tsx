@@ -35,10 +35,11 @@ const Home: React.FC = () => {
   return (
     <div className={Styles.home}>
       <BoxUsers
+        isLoading={loading}
         usersList={usersList}
         callback={fetchUsers}
         clear={() => {
-          setListUsers([])
+          setListUsers(usersList.slice(0, usersList.length - 10))
         }}
       />
     </div>
