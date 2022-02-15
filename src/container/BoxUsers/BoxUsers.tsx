@@ -2,7 +2,7 @@ import React from 'react';
 
 import _ from 'lodash';
 
-import { GridContent } from '@/components';
+import { GridContent, Loading } from '@/components';
 
 import Styles from '../Styles/container-styles.scss'
 
@@ -16,7 +16,16 @@ const BoxUsers: React.FC<Props> = ({ usersList, clear, callback }) => {
 
   return (
     <div className={Styles.box}>
-      <div className={Styles.topBox}>Top</div>
+      <div className={Styles.topBox}>
+        <img 
+          src="https://cdn-icons.flaticon.com/png/512/1307/premium/1307714.png?token=exp=1644888199~hmac=75c3ab2b736d49017e748ffd292c87ab" 
+          height="48"
+          width="48" 
+        />
+        <span>
+          User List
+        </span>
+      </div>
       <div className={Styles.contentBox}>
         {
           _.isEmpty(usersList)
@@ -26,19 +35,21 @@ const BoxUsers: React.FC<Props> = ({ usersList, clear, callback }) => {
       </div>
       <div className={Styles.footerBox}>
         <span>Total users: {usersList.length}</span>
-        <button
-          onClick={clear}
-          className={`${Styles.btnClear}`}>
-          Clear
-        </button>
-        <button
-          onClick={callback}
-          className={Styles.button}>
-          +
-        </button>
+        <div>
+          <button
+            onClick={clear}
+            className={`${Styles.btnClear}`}>
+            -
+          </button>
+          <button
+            onClick={callback}
+            className={Styles.button}>
+            +
+          </button>
+        </div>
       </div>
     </div>
   );
 }
 
-export default BoxUsers;
+export default Loading(BoxUsers);
