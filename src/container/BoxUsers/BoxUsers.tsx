@@ -30,7 +30,7 @@ const BoxUsers: React.FC<Props> = ({ usersList, clear, callback }) => {
           {LABELS.boxUser.labels.titleBox}
         </span>
       </div>
-      <div className={Styles.contentBox}>
+      <div id="contentBox" className={Styles.contentBox}>
         {
           _.isEmpty(usersList)
             ? <span>{LABELS.boxUser.labels.noItems}</span>

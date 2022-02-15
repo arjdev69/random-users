@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
 import _ from 'lodash'
+import {scrollToBottom} from '@/utils'
 
 import { getListUsersSuccess } from '@/store/modules/users/actions'
 
@@ -20,6 +21,8 @@ const Home: React.FC = () => {
   };
 
   useEffect(() => {
+    scrollToBottom("contentBox")
+
     if (!_.isEmpty(users)) {
       setListUsers([
         ...usersList,
@@ -39,7 +42,7 @@ const Home: React.FC = () => {
         usersList={usersList}
         callback={fetchUsers}
         clear={() => {
-          setListUsers(usersList.slice(0, usersList.length - 10))
+          setListUsers(usersList.slice(0, usersList.length - 1))
         }}
       />
     </div>
