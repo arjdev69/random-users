@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { Player } from '@lottiefiles/react-lottie-player';
+
+import {ANIMATIONS} from '@/utils/Contants'
 
 import Styles from './loading-styles.scss';
 
@@ -19,7 +21,7 @@ function WithLoading(Component) {
             autoplay
             loop
             speed={2}
-            src="https://assets5.lottiefiles.com/packages/lf20_tz3ykkpy.json"
+            src={ANIMATIONS.loading.animation.spinner}
             style={{ height: '150px', width: '150px' }}
           />
         </div>
