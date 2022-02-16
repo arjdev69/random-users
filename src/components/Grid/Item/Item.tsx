@@ -8,9 +8,10 @@ import Styles from '../grid-styles.scss';
 
 interface Props {
   data: Item;
+  clickBtnView(any): any
 }
 
-const Item: React.FC<Props> = ({ data }) => {
+const Item: React.FC<Props> = ({ data, clickBtnView }) => {
 
   return (
     <div className={Styles.gridItem}>
@@ -29,7 +30,11 @@ const Item: React.FC<Props> = ({ data }) => {
           Country: {data.nat}
         </span>
         <div className={Styles.actions}>
-          <button className={Styles.btn}>
+          <button className={Styles.btn}
+            onClick={() => {
+              clickBtnView(data)
+            }}
+          >
             <MdOpenInBrowser size={32} color={'#fff'} title={"View"} />
             <span>View</span>
           </button>

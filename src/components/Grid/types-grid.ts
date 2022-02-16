@@ -16,5 +16,6 @@ export interface Item {
     large: string,
     medium: string,
     thumbnail: string
-  }
+  },
+  phone: string,
 }
