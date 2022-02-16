@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import _ from 'lodash';
+import {filterData} from '@/utils'
 
 import { LABELS } from '@/utils/Contants'
 
@@ -20,11 +21,8 @@ interface Props {
 }
 
 const BoxUsers: React.FC<Props> = ({ usersList, clear, callback }) => {
-  const [dataList, setDataList] = useState([])
-
-  useEffect(() => {
-    setDataList(usersList)
-  }, [usersList])
+  const [searchValue, setSearchValue] = useState('')
+  const memoizedUser = useMemo(() => filterData(usersList, searchValue), [usersList, searchValue]);
 
   return (
     <div className={Styles.box}>
@@ -40,7 +38,7 @@ const BoxUsers: React.FC<Props> = ({ usersList, clear, callback }) => {
           </span>
         </div>
         <div className={Styles.groupButton}>
-          <span className={Styles.text}>Users: {dataList.length}</span>
+          <span className={Styles.text}>Users: {memoizedUser.length}</span>
           <button
             onClick={clear}
             className={`${Styles.btnClear}`}>
@@ -50,9 +48,9 @@ const BoxUsers: React.FC<Props> = ({ usersList, clear, callback }) => {
       </div>
       <div id="contentBox" className={Styles.contentBox}>
         {
-          _.isEmpty(dataList)
+          _.isEmpty(memoizedUser)
             ? <span>{LABELS.boxUser.labels.noItems}</span>
-            : <GridContent data={dataList} />
+            : <GridContent data={memoizedUser} />
         }
       </div>
       <div className={Styles.footerBox}>
@@ -66,7 +64,7 @@ const BoxUsers: React.FC<Props> = ({ usersList, clear, callback }) => {
               className={Input.inputSearch}
               placeholder="Type to Search..." 
               onChange={(ev) => {
-                console.log(ev.target.value)
+                setSearchValue(ev.target.value)
               }}
             />
           </div>
