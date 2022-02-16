@@ -1,25 +1,20 @@
 import React from 'react';
 
+import {Item} from './types-grid'
+
+import GridItem from './Item/Item'
+
 import Styles from './grid-styles.scss';
 
 interface Props {
   data: any[]
 }
 
-interface Item {
-  gender: string,
-  name: {
-    title: string,
-    first: string,
-    last: string
-  }
-}
-
 const Grid: React.FC<Props> = ({data}) => {
   return (
     <div className={Styles.gridContainer}>
       {data.map((value: Item) => (
-        <div className={Styles.gridItem}>{value.name.first}</div>
+        <GridItem data={value} />
       ))}
     </div>
   )
