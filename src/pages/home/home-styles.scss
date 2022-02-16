@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+body {
+  background-image: linear-gradient(to bottom right, #00c3e8, #82c8d6);;
+}
+
 .home {
   display: flex;
   flex: 1;
@@ -17,5 +21,4 @@
   height: 100vh;
   max-height: 100vh;
 
-  background: #00c3e8;
 }
