@@ -8,7 +8,7 @@ import { GridContent, Loading } from '@/components';
 
 import Styles from '../Styles/container-styles.scss'
 
-import { logo } from '@/assets'
+import {logo}  from '@/assets'
 
 interface Props {
   usersList: any[],
@@ -26,7 +26,7 @@ const BoxUsers: React.FC<Props> = ({ usersList, clear, callback }) => {
           height="48"
           width="48"
         />
-        <span>
+        <span className={Styles.title}>
           {LABELS.boxUser.labels.titleBox}
         </span>
       </div>
