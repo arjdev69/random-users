@@ -9,7 +9,7 @@ export const LABELS = {
   boxUser: {
     labels: {
       titleBox: "User List",
-      noItems: "Sem dados de usuários no momento."
+      noItems: "No data in moment."
     }
   }
 };
