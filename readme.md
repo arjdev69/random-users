@@ -31,3 +31,9 @@
 - Deploy
 - Refactor class styles
 
+
+## Contact
+
+- +55 71 9 9323-5096
+- bruno96araujo@gmail.com 
+- https://github.com/arjdev69/random-users
