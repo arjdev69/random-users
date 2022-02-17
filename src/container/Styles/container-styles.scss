@@ -47,7 +47,7 @@
         padding: 0px;
         transition-duration: 0.4s;
 
-        color: red;
+        color: #fff;
         border: none;
         text-decoration: none;
         border-radius: 4px;
@@ -60,7 +60,7 @@
 
       .btnClear:after {
         content: "";
-        background: rgba(255, 0, 0, 0.308);
+        background: #fff;
         display: block;
         position: absolute;
         padding-top: 300%;
