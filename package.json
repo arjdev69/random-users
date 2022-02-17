@@ -10,6 +10,8 @@
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test:ci": "npm test -- --coverage"
   },
   "devDependencies": {
@@ -27,6 +29,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-standard": "^5.0.0",
+    "gh-pages": "^3.2.3",
     "git-commit-msg-linter": "^4.0.7",
     "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
